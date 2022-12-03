@@ -1,7 +1,6 @@
 import '../../../App.css';
 import { useContext } from "react";
 import { FiShoppingCart } from "react-icons/fi";
-import Interest from "./Interest";
 import { Link } from "react-router-dom";
 import {
   ProductContext,

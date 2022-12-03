@@ -1,9 +1,10 @@
 const express= require('express');
-require('dotenv').config()
+require('dotenv').config();
 const morgan= require('morgan');
 const marketRouter= require('./routes/market.route');
 const cors=require('cors');
 
+const port = process.env.PORT || 2424 ;
 const app= express();
 const corsOptions ={
     origin:'*', 
@@ -16,5 +17,5 @@ const corsOptions ={
  app.use(express.json())
  app.use(marketRouter)
 
- app.listen(2424)
- console.log('server on port 2424')
+ app.listen(port)
+ console.log("server listening to port "+port)

@@ -14,7 +14,7 @@ function SumitTicket() {
  
   const handlesubmit= async (e)=>{
     e.preventDefault();
-    const res= await fetch("http://localhost:2424/support/ticket",{
+    const res= await fetch("http://localhost:2400/support/ticket",{
       method:"POST",
       body:JSON.stringify(ticket),
       headers:{"content-Type":"application/json"}
@@ -23,6 +23,9 @@ function SumitTicket() {
     console.log(data)
 
     navigate('/ticketsumit')
+    const reset= document.getElementById('form');
+    reset.reset()
+    
   };
   const handlechange=(e)=>{
     setTicket({...ticket,[e.target.name]:[e.target.value]})
@@ -31,7 +34,7 @@ function SumitTicket() {
 
     return (
 
-    <Form onSubmit={handlesubmit} className='App-body ticket'>
+    <Form onSubmit={handlesubmit} id='form' className='App-body ticket'>
     <Form.Group className="input" controlId="Name">
         <Form.Label>Name</Form.Label>
         <Form.Control name='name' onChange={handlechange} type="text" placeholder="Name" />
