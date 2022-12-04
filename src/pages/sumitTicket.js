@@ -14,7 +14,7 @@ function SumitTicket() {
  
   const handlesubmit= async (e)=>{
     e.preventDefault();
-    const res= await fetch("http://localhost:2400/support/ticket",{
+    const res= await fetch("https://tiendacomputo-server-production.up.railway.app/support/ticket",{
       method:"POST",
       body:JSON.stringify(ticket),
       headers:{"content-Type":"application/json"}
